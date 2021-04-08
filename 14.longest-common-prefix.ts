@@ -14,7 +14,7 @@ function longestCommonPrefix(strs: string[]): string {
     }
     const baseStrArr = baseStr.split('')
 
-    strs.splice(1, strs.indexOf(baseStr))
+    strs.splice(strs.indexOf(baseStr), 1)
 
     let tempCommonPrefix: string[] = []
 
