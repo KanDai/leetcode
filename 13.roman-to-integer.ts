@@ -8,15 +8,14 @@
 function romanToInt(s: string): number {
     let res = 0
     const arr = s.split('')
-
-    const getRomanInt = (s: string): number => {
-        if (s === 'I') return 1
-        if (s === 'V') return 5
-        if (s === 'X') return 10
-        if (s === 'L') return 50
-        if (s === 'C') return 100
-        if (s === 'D') return 500
-        if (s === 'M') return 1000
+    const map = {
+        'I': 1,
+        'V': 5,
+        'X': 10,
+        'L': 50,
+        'C': 100,
+        'D': 500,
+        'M': 1000
     }
 
     for (let i = 0; i < arr.length; i++) {
@@ -28,10 +27,10 @@ function romanToInt(s: string): number {
             arr[i] === 'C' && arr[i + 1] === 'D' ||
             arr[i] === 'C' && arr[i + 1] === 'M'
         ) {
-            res += getRomanInt(arr[i + 1]) - getRomanInt(arr[i])
+            res += map[arr[i + 1]] - map[arr[i]]
             i++
         } else {
-            res += getRomanInt(arr[i])
+            res += map[arr[i]]
         }
     }
 
