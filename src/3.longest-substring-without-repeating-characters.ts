@@ -32,3 +32,4 @@ function lengthOfLongestSubstring(s: string): number {
 };
 // @lc code=end
 
+export { lengthOfLongestSubstring }

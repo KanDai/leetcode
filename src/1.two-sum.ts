@@ -16,3 +16,4 @@ function twoSum(nums: number[], target: number): number[] {
 };
 // @lc code=end
 
+export { twoSum }
