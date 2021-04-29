@@ -8,22 +8,19 @@
 function removeDuplicates(nums: number[]): number {
     if (nums.length === 0) return nums.length
 
-    let flag = true
+    let i = 0
 
-    while (flag) {
-        for (let i = 0; i < nums.length; i++) {
-            if (nums[i] === nums[i+1]) {
-                nums.splice(i, 1)
-                break
-            }
+    while (i < nums.length - 1) {
 
-            if (i === nums.length - 1) {
-                flag = false
-            }
+        if (nums[i] === nums[i+1]) {
+            nums.splice(i, 1)
+            i = 0
+            continue
         }
+
+        i++
     }
 
     return nums.length
 };
 // @lc code=end
-
