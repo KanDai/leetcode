@@ -14,14 +14,15 @@ function countPrimes(n: number): number {
         for (let j = 2; j < i; j++) {
             if (i % j === 0) break
 
-            if (j + 1 === i) arr.push(i)
+            if (j >= Math.sqrt(i)) {
+                arr.push(i)
+                break
+            }
         }
     }
 
     return arr.length
 };
 // @lc code=end
-
-console.log(countPrimes(499979))
 
 export { countPrimes }
